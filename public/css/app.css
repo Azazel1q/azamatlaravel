@@ -197,18 +197,15 @@ h1 {
 }
 
 .main {
-    background-image: url(/img/layer-base.png);
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: #232323;
+    color: #f9f7f7;
 }
 
 .container {
     max-width: 1250px;
     height: auto;
     margin: 0 auto;
-    padding: 100px;
+    padding: 100px 0;
 }
 .dropdown-menu {
     cursor: pointer;
@@ -269,6 +266,7 @@ h1 {
     border-radius: 10px;
     transition: all .3s ease-in-out;
     cursor: pointer;
+    text-align: center;
 }
 
 .main-body:hover {
@@ -280,6 +278,21 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 40px;
+    padding: 30px;
+    transition: all .3s ease-in-out;
+}
+
+.worker-item:hover:not(:focus-visible) {
+    border: 1px solid #f9f7f7;
+    background: #555454;
+    transform: translateY(-5px);
+}
+
+.worker-item img {
+    width: 20%;
 }
 
 .menu {
@@ -305,3 +318,88 @@ h1 {
     transition: all .8s ease-in-out ;
 }
 
+.best-workers {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.workers {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.worker-sm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    transition: all .3s ease-in-out;
+    padding: 20px 0;
+}
+
+.worker-sm:hover:not(:focus-visible) {
+    background: #555454;
+    border: 1px solid #b2b2b2;
+    border-radius: 30px;
+    transform: translateY(-5px);
+}
+
+.worker-sm__img {
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    background: #555454;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.worker-sm__img img {
+    width: 100%;
+}
+
+.worker-sm__title {
+    font-size: 20px;
+}
+
+.worker-sm__desc {
+    font-size: 15px;
+    max-width: 70%;
+    text-align: center;
+}
+
+.form-order-bg {
+    background-image: url('/img/form-order-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.form-order {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    border-radius: 50px;
+}
+
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container-workers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}

@@ -1,7 +1,3 @@
-// const { functions } = require("lodash");
-
-// const { forEach } = require("lodash");
-
 window.addEventListener('scroll', e => {
     let scrollOffset = this.scrollY;
     document.body.style.cssText = `--scrollTop:${scrollOffset}px`;
@@ -12,14 +8,8 @@ window.addEventListener('scroll', e => {
     }
 })
 
-const text = $('.layers');
-if(text) {
-    alert('true');
-} else {
-    alert('false');
-}
 //header
-const headerLogo = document.querySelectorAll('.logo');
+const headerLogo = document.querySelector('.logo');
 
 // menu
 const burger_button = document.querySelector('#burger_button'),
@@ -45,7 +35,7 @@ function openMenu() {
 function closeMenu() {
     menu.style.right = `-50%`;
     isClick = false;
-    closeMenuAnim();
+    closeMenuAnim();ЫЫ
 }
 
 function openMenuAnim() {
@@ -59,15 +49,11 @@ function closeMenuAnim() {
 }
 
 function getLight() {
-    headerLogo.forEach(e=>function() {
-        e.classList.add('logo-light');
-    });
+    headerLogo.classList.add('logo-light');
     burger_button_svg.classList.add('dropdown-menu__svg-light');
 }
 
 function removeLight() {
-    headerLogo.forEach(e=>function() {
-        e.classList.remove('logo-light');
-    });
+    headerLogo.classList.remove('logo-light');
     burger_button_svg.classList.remove('dropdown-menu__svg-light');
 }

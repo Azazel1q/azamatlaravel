@@ -8,11 +8,16 @@
         <link rel="stylesheet" href="css/app.css">
     </head>
 <body>
-    <x-header></x-header>
+    <x-header-light></x-header-light>
     <section class="main">
-        <div class="container" style="width:100%">
-            <h2>Фрилансеры</h2>
+        <div class="container container-workers" style="width:100%">
+            <h2 class="workers__title">Фрилансеры</h2>
             <div class="items">
+                <x-item></x-item>
+                <x-item></x-item>
+                <x-item></x-item>
+                <x-item></x-item>
+                <x-item></x-item>
                 <x-item></x-item>
             </div>
         </div>

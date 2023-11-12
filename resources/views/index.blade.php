@@ -23,7 +23,7 @@
             </ul>
             <div class="layer layers_middle">
                 <h1>Миллионы исполнители готовы вам помочь</h1>
-                <a class="button" href=""><p class="link">Оставить заказ</p></a>
+                <a class="button" href="">Оставить заказ</a>
             </div>
             <div class="layer layers_front" style="background-image:url(/img/front.png)"></div>
         </div>
@@ -31,10 +31,45 @@
     <section class="main">
         <div class="container">
             <div class="best-workers">
-                <h2 class="title">Чем мы занимаемся?</h2>
-                <p class="text">Сайт представлен в стиле природы, так как <br>
-                    наша деятельность непосредственно связано с созданием твоhческого контента. <br>
-                    Сайт предлагает вам создать будущее для себя либо для другим!</p>
+                <h2>Лучшие фрилансеры</h2>
+                <div class="workers">
+                    <article class="worker-sm">
+                        <div class="worker-sm__img" >
+                            <img src="img/front.png" alt="">
+                        </div>
+                        <h3 class="worker-sm__title">Пилапуп Пилапупович</h3>
+                        <p class="worker-sm__desc">Фрилансер Full-stack Разработчик с 10 летним опытом</p>
+                    </article>
+                    <article class="worker-sm">
+                        <div class="worker-sm__img" >
+                            <img src="img/front.png" alt="">
+                        </div>
+                        <h3 class="worker-sm__title">Пилапуп Пилапупович</h3>
+                        <p class="worker-sm__desc">Фрилансер Full-stack Разработчик с 10 летним опытом</p>
+                    </article>
+                    <article class="worker-sm">
+                        <div class="worker-sm__img" >
+                            <img src="img/front.png" alt="">
+                        </div>
+                        <h3 class="worker-sm__title">Пилапуп Пилапупович</h3>
+                        <p class="worker-sm__desc">Фрилансер Full-stack Разработчик с 10 летним опытом</p>
+                    </article>
+                    <article class="worker-sm">
+                        <div class="worker-sm__img" >
+                            <img src="img/front.png" alt="">
+                        </div>
+                        <h3 class="worker-sm__title">Пилапуп Пилапупович</h3>
+                        <p class="worker-sm__desc">Фрилансер Full-stack Разработчик с 10 летним опытом</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main-header form-order-bg">
+        <div class="container">
+            <div class="form-order">
+                <h2 class="form-order__title">Закажите услуги прямо сечас</h2>
+                <a class="button" href="">Начать</a>
             </div>
         </div>
     </section>
