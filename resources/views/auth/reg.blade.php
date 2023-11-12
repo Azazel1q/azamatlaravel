@@ -19,10 +19,10 @@
     method="POST"
     >
         @csrf
-        <x-forms.text-input type="text" placeholder="Name"></x-forms.text-input>
-        <x-forms.text-input type="text" placeholder="Surname"></x-forms.text-input>
+        <x-forms.text-input type="text" placeholder="Имя"></x-forms.text-input>
+        <x-forms.text-input type="text" placeholder="Фамилия"></x-forms.text-input>
         <x-forms.text-input type="email" placeholder="Email"></x-forms.text-input>
-        <x-forms.text-input type="password" placeholder="Password"></x-forms.text-input>
+        <x-forms.text-input type="password" placeholder="Пароль"></x-forms.text-input>
         <x-forms.primary-button>Регистрация</x-forms.primary-button>
     </x-forms.auth-form>
 </body>

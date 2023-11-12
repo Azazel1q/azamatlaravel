@@ -201,6 +201,22 @@ h1 {
     color: #f9f7f7;
 }
 
+.main-full {
+    background: #232323;
+    color: #f9f7f7;
+    height: 100vh;
+}
+
+.auth-form-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #9c9c9c;
+    border-radius: 30px;
+    padding: 30px;
+}
+
 .container {
     max-width: 1250px;
     height: auto;
