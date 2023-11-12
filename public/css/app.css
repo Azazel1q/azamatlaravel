@@ -12,6 +12,16 @@ li {
 a {
     text-decoration: none;
 }
+
+.logo {
+    color: #232323;
+    transition: all .3s ease-in-out;
+}
+
+.logo-light {
+    color: #f9f7f7;
+}
+
 .link {
     text-align: center;
     position: relative;
@@ -31,6 +41,27 @@ a {
 .link:hover::after {
     width: 100%;
     background: #ffffff;
+}
+
+.link-dark {
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+    color: #232323;
+    text-decoration: none;
+}
+.link-dark::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    transition: all .3s ease-in-out;
+}
+.link-dark:hover::after {
+    width: 100%;
+    background: #232323;
 }
 
 :root {
@@ -69,18 +100,21 @@ header {
 .main-header {
     position: relative;
 }
-.main-header::after {
+/* .main-header::after {
     content: '';
     position: absolute;
     z-index: 100;
     width: 100%;
-    height: calc(var(--index)*10);
-    background-image: url(/img/ground.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    bottom: calc(var(--index)* -5);
-}
+    height: calc(var(--index)*5);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(315deg, #c0bebe, #e4e2e2);
+    box-shadow:  -35px -35px 70px #555454,
+             35px 35px 70px #ffffff;
+    bottom: calc(var(--index)* -2);
+} */
 .layers {
     height: 100vh;
     display: flex;
@@ -100,8 +134,19 @@ header {
 }
 
 .layers_base {
-    transform: translate3d(0, calc(var(--scrollTop)/1.6), 0);
-    z-index: 0;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(315deg, #c0bebe, #e4e2e2);
+    box-shadow:  -35px -35px 70px #555454,
+             35px 35px 70px #ffffff;
+    bottom: calc(var(--index)* 0);
+    z-index: 100;
 }
 
 .layers_middle {
@@ -130,7 +175,7 @@ header {
 
 h1 {
     font-weight: 900;
-    font-size: 50px;
+    font-size: calc(var(--index)*2);
     will-change: transform;
     color: #232323;
     text-align: start;
@@ -148,9 +193,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: #232323;
 }
 
 .main {
@@ -167,10 +210,20 @@ h1 {
     margin: 0 auto;
     padding: 100px;
 }
-.dropdown_menu {
+.dropdown-menu {
     cursor: pointer;
     z-index: 20;
 }
+
+.dropdown-menu__svg {
+    fill: #232323;
+    transition: all .3s ease-in-out;
+}
+
+.dropdown-menu__svg-light {
+    fill: #f9f7f7 !important;
+}
+
 .auth-reg-container {
     display: flex;
     justify-content: center;
