@@ -16,6 +16,7 @@ a {
 .logo {
     color: #232323;
     transition: all .3s ease-in-out;
+    cursor: pointer;
 }
 
 .logo-light {
@@ -95,6 +96,7 @@ header {
     left: 0;
     z-index: 200;
     padding: 10px;
+    background: #c0bebe3b;
 }
 
 .main-header {

@@ -20,25 +20,9 @@ return new class extends Migration
                 ->nullable();
             $table->unsignedInteger('price')
                 ->default(0);
-
-            $table->foreignIdFor(Brand::class)
-                ->constrained()
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
-
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
-        });
-        Schema::create('category_product', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(Category::class)
-                ->constrained()
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
-
-            $table->foreignIdFor(Product::class)
-                ->constrained()
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
         });
     }
 

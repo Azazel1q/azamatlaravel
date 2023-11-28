@@ -12,7 +12,7 @@ window.addEventListener('scroll', e => {
 const headerLogo = document.querySelector('.logo');
 
 // menu
-const burger_button = document.querySelector('#burger_button'),
+const burger_button = document.getElementById("burger_button"),
     burger_button_svg = document.querySelector('.dropdown-menu__svg'),
     menu = document.querySelector('#menu'),
     menu_body = document.querySelector('#menu__body');
@@ -35,7 +35,7 @@ function openMenu() {
 function closeMenu() {
     menu.style.right = `-50%`;
     isClick = false;
-    closeMenuAnim();ЫЫ
+    closeMenuAnim();
 }
 
 function openMenuAnim() {

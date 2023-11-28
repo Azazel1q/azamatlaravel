@@ -2,20 +2,21 @@
 
 namespace Database\Seeders;
 
-use App\Models\Brand;
-use App\Models\Category;
-use App\Models\Product;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    public function run():void
+    /**
+     * Seed the application's database.
+     */
+    public function run(): void
     {
-        Brand::factory(20)->create();
+        // \App\Models\User::factory(10)->create();
 
-        Product::factory(20)
-            ->hasAttached(Category::factory(rand(1, 3)))
-            ->create();
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }
