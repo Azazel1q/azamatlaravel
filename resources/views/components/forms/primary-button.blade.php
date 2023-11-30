@@ -1,3 +1,3 @@
-<button class="button" type="submit">
+<a href="/{{ $link }}/" class="button" type="submit">
     {{ $slot }}
-</button>
+</a>

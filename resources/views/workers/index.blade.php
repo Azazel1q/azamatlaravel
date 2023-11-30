@@ -6,9 +6,9 @@
         <div class="container container-workers" style="width:100%">
             <h2 class="workers__title">Фрилансеры</h2>
             <div class="items">
-                <x-item
-                name="Пипалапуп Пипалапупович" 
-                desc="Работник компании Студия Максима Набиуллина"></x-item>
+                @foreach ($Users as $user)
+                    <x-item name="{{ $user->name }}" desc="{{ $user->description }}" thumb="{{$user->thumb}}" link="workers/{{ $user->id }}"></x-item>
+                @endforeach
             </div>
         </div>
     </section>
