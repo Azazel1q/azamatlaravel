@@ -5,7 +5,7 @@
         <p class="description">{{ $desc }}</p>
     </div>
     <div class="worker-item__buttons">
-        <a class="button" href="/{{ $link }}/">Написать</a>
-        <a class="button" href="/{{ $link }}/">Профиль</a>
+        <a class="button" href="/{{ $chat }}">Написать</a>
+        <a class="button" href="/{{ $profile }}">Профиль</a>
     </div>
 </div>

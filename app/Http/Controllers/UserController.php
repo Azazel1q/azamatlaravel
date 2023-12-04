@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,7 +13,12 @@ class UserController extends Controller
         return view('workers.index', $context);
     }
 
-    public function profileWorker(User $user) {
-        return view('workers.profile', ['worker'=>$user]);
+    public function detail(User $user) {
+        return view('workers.detail', ['worker'=>$user]);
+    }
+
+    public function LK()
+    {
+        return view('LK', ['lk' => Auth::user()->product()->latest()->get()]);
     }
 }

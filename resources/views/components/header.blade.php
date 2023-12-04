@@ -9,9 +9,11 @@
         <ul class="menu__body" id="menu__body">
             <li><div class="logo logo-light">WorkIng</div></li>
             <li><a class="link" href="{{ route('home')}}">Главная</a></li>
-            <li><a class="link" href="">Биржа</a></li>
+            <li><a class="link" href="{{ route('products') }}">Биржа</a></li>
             <li><a class="link" href="{{ route('workers')}}">Исполнители</a></li>
-            <li><a class="link" href="{{ route('login')}}">Вход</a><a class="link" href="{{ route('signUp')}}">Регистрация</a></li>
+            <li><a class="link" href="{{ route('login')}}">Вход</a></li>
+            <li><a class="link" href="{{ route('register')}}">Регистрация</a></li>
+            <li><a class="link" href="{{ route('LK')}}">Личный кабинет</a></li>
         </ul>
     </div>
 </header>

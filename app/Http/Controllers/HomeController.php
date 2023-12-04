@@ -10,4 +10,14 @@ class HomeController extends Controller
         // dd(auth()->user());
         return view("index");
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function index()
+    {
+        return view('home');
+    }
 }

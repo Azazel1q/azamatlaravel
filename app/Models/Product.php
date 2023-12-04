@@ -15,9 +15,11 @@ class Product extends Model
     protected $fillable = [
         'slug',
         'title',
-        'brand_id',
         'price',
-        'thumb'
+        'description',
+        'thumb',
+        'category_id',
+        'user_id'
     ];
 
     protected static function boot() {
@@ -28,10 +30,10 @@ class Product extends Model
         });
     }
 
-    public function brand(): BelongsTo {
-        return $this->belongsTo(Brand::class);
+    public function userId(): hasOne {
+        return $this->hasOne(User::class);
     }
-    public function categories(): BelongsToMany {
-        return $this->belongsToMany(Category::class);
+    public function categories(): hasOne {
+        return $this->hasOne(Category::class);
     }
 }

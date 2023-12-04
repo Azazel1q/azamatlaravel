@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LKController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,15 +18,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Controls
-Route::controller(AuthController::class)->group(function(){
-    Route::get('/login', 'index')->name('login');
-    Route::post('/login', 'signIn')->name('signIn');
+// Route::controller(AuthController::class)->group(function(){
+//     Route::get('/login', 'index')->name('login');
+//     Route::post('/login', 'signIn')->name('signIn');
 
-    Route::get('/reg', 'signUp')->name('signUp');
-    Route::post('/reg', 'signUpForm')->name('signUpForm');
-});
+//     Route::get('/register', 'signUp')->name('signUp');
+//     Route::post('/register', 'signUpForm')->name('signUpForm');
+// });
 
 // views
-Route::get('/', HomeController::class)->name('home');
 Route::get('/workers', [UserController::class, 'workers'])->name('workers');
-Route::get('/{worker}', [UserController::class, 'profileWorker'])->name('profile');
+Route::get('/workers/{user}', [UserController::class, 'detail'])->name('workersDetail');
+
+Route::get('/products',[ProductController::class, 'products'])->name('products');
+Route::get('/products/{product}',[ProductController::class, 'detail'])->name('productsDetail');
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/LK', [UserController::class, 'LK'])->name('LK');

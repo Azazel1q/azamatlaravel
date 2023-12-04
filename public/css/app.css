@@ -421,3 +421,18 @@ h1 {
     align-items: center;
     gap: 30px;
 }
+
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.product-item {
+    flex-direction: column;
+    gap: 30px;
+}
+
+.product-item img {
+    width: 80%;
+}

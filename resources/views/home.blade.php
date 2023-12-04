@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Главная')
 @section('content')
-    <x-header></x-header>
     <main class="main-header">
         <div class="layers">
             <ul class="layers_base">

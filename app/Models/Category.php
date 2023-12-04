@@ -24,7 +24,7 @@ class Category extends Model
             $category->slug = $category->slug ?? str($category->title)->slug();
         });
     }
-    public function products(): BelongsTo {
-        return $this->belongsTo(Product::class);
+    public function products(): hasMany {
+        return $this->hasMany(Product::class);
     }
 }

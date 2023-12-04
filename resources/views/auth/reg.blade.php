@@ -23,7 +23,7 @@
         <x-forms.text-input type="text" placeholder="Фамилия"></x-forms.text-input>
         <x-forms.text-input type="email" placeholder="Email"></x-forms.text-input>
         <x-forms.text-input type="password" placeholder="Пароль"></x-forms.text-input>
-        <x-forms.primary-button>Регистрация</x-forms.primary-button>
+        <x-forms.text-input type="submit">Регистрация</x-forms.text-input>
     </x-forms.auth-form>
 </body>
 </html>
