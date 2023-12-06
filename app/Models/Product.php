@@ -30,10 +30,10 @@ class Product extends Model
         });
     }
 
-    public function userId(): hasOne {
-        return $this->hasOne(User::class);
+    public function user(): belongsTo {
+        return $this->belongsTo(User::class);
     }
-    public function categories(): hasOne {
-        return $this->hasOne(Category::class);
-    }
+    // public function categories(): hasOne {
+    //     return $this->hasOne(Category::class);
+    // }
 }

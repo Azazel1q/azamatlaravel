@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Регистрация')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -58,6 +60,16 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="category_user" class="col-md-4 col-form-label text-md-end">Кем являетесь?</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" name="category_user" id="category_user">
+                                    <option value="2">Исполнитель</option>
+                                    <option value="3">Клиент</option>
+                                </select>
                             </div>
                         </div>
 

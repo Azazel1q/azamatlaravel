@@ -27,13 +27,15 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // views
+Route::get('/', [UserController::class, 'workers'])->name('index');
+Route::get('/home', [UserController::class, 'Main'])->name('home');
+
+Auth::routes();
+
 Route::get('/workers', [UserController::class, 'workers'])->name('workers');
 Route::get('/workers/{user}', [UserController::class, 'detail'])->name('workersDetail');
 
 Route::get('/products',[ProductController::class, 'products'])->name('products');
 Route::get('/products/{product}',[ProductController::class, 'detail'])->name('productsDetail');
 
-Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/LK', [UserController::class, 'LK'])->name('LK');

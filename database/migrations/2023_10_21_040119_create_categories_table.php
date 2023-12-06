@@ -19,6 +19,12 @@ return new class extends Migration
             $table->string('title');
             $table->timestamps();
         });
+
+        Schema::create('categories_user', function (Blueprint $table) {
+            $table->id();
+            $table->string('slug');
+            $table->string('title');
+        });
     }
 
     /**

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('thumb')->nullable();
             $table->string('password');
+            $table->foreignId('category_user')->constrained()->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -11,9 +11,17 @@
             <li><a class="link" href="{{ route('home')}}">Главная</a></li>
             <li><a class="link" href="{{ route('products') }}">Биржа</a></li>
             <li><a class="link" href="{{ route('workers')}}">Исполнители</a></li>
+            @guest
             <li><a class="link" href="{{ route('login')}}">Вход</a></li>
             <li><a class="link" href="{{ route('register')}}">Регистрация</a></li>
+            @endguest
+            @auth
             <li><a class="link" href="{{ route('LK')}}">Личный кабинет</a></li>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <input type="submit" class="link" value="Выход">
+            </form>
+            @endauth
         </ul>
     </div>
 </header>

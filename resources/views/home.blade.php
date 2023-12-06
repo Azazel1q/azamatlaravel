@@ -4,13 +4,13 @@
     <main class="main-header">
         <div class="layers">
             <ul class="layers_base">
-                <li><a class="link-dark" href="">Дизайн</a></li>
-                <li><a class="link-dark" href="">Разработка и IT</a></li>
-                <li><a class="link-dark" href="">Тексты и переводы</a></li>
-                <li><a class="link-dark" href="">SEO и Трафик</a></li>
-                <li><a class="link-dark" href="">Соцсети и реклама</a></li>
-                <li><a class="link-dark" href="">Аудио, видео, съемка</a></li>
-                <li><a class="link-dark" href="">Бзнес и жизнь</a></li>
+                @foreach ($categories as $key => $category)
+                    @if ($key < 7)
+                        <li><a class="link-dark" href="categories/{{ $category->slug }}">{{ $category->title }}</a></li>
+                    @else
+                        @break
+                    @endif
+                @endforeach
             </ul>
             <div class="layer layers_middle">
                 <h1>Миллионы исполнители готовы вам помочь</h1>
@@ -24,34 +24,16 @@
             <div class="best-workers">
                 <h2>Лучшие фрилансеры</h2>
                 <div class="workers">
-                    <article class="worker-sm">
-                        <div class="worker-sm__img" >
-                            <img src="img/front.png" alt="">
-                        </div>
-                        <h3 class="worker-sm__title">Пилапуп Пилапупович</h3>
-                        <p class="worker-sm__desc">Фрилансер Full-stack Разработчик с 10 летним опытом</p>
-                    </article>
-                    <article class="worker-sm">
-                        <div class="worker-sm__img" >
-                            <img src="img/front.png" alt="">
-                        </div>
-                        <h3 class="worker-sm__title">Пилапуп Пилапупович</h3>
-                        <p class="worker-sm__desc">Фрилансер Full-stack Разработчик с 10 летним опытом</p>
-                    </article>
-                    <article class="worker-sm">
-                        <div class="worker-sm__img" >
-                            <img src="img/front.png" alt="">
-                        </div>
-                        <h3 class="worker-sm__title">Пилапуп Пилапупович</h3>
-                        <p class="worker-sm__desc">Фрилансер Full-stack Разработчик с 10 летним опытом</p>
-                    </article>
-                    <article class="worker-sm">
-                        <div class="worker-sm__img" >
-                            <img src="img/front.png" alt="">
-                        </div>
-                        <h3 class="worker-sm__title">Пилапуп Пилапупович</h3>
-                        <p class="worker-sm__desc">Фрилансер Full-stack Разработчик с 10 летним опытом</p>
-                    </article>
+                    @foreach ($workers as $worker)
+                        <article class="worker-sm">
+                            <div class="worker-sm__img" >
+                                <img src="{{ $worker->thumb }}" alt="">
+                            </div>
+                            <h3 class="worker-sm__title">{{ $worker->name }}</h3>
+                            <p class="worker-sm__desc">{{ $worker->desc }}</p>
+                            <a class="link" href="workers/{{ $worker->id }}">Профиль</a>
+                        </article>
+                    @endforeach
                 </div>
             </div>
         </div>

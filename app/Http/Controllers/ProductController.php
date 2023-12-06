@@ -17,7 +17,8 @@ class ProductController extends Controller
         return view('products.detail', ['product'=>$product]);
     }
 
-    public function authProducts() {
-        return view('products.index', ['products' => Auth::user()->products()->latest()->get()]);
-    }
+    // public function authProducts() {
+    //     $context = ['products' => Auth::user()->product()->latest()->get()];
+    //     return view('products.index', $context);
+    // }
 }
