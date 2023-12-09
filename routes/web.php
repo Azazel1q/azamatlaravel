@@ -27,8 +27,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // views
-Route::get('/', [UserController::class, 'workers'])->name('index');
-Route::get('/home', [UserController::class, 'Main'])->name('home');
+Route::get('/', [UserController::class, 'Main'])->name('home');
+// Route::get('/', [UserController::class, 'workers'])->name('index');
 
 Auth::routes();
 
