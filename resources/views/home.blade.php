@@ -14,7 +14,7 @@
             </ul>
             <div class="layer layers_middle">
                 <h1>Миллионы исполнители готовы вам помочь</h1>
-                <a class="button" href="">Оставить заказ</a>
+                <a class="button" href="{{ route('orderForm') }}">Оставить заказ</a>
             </div>
             <div class="layer layers_front" style="background-image:url(/img/front.png)"></div>
         </div>

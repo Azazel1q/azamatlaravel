@@ -2,11 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Support\CanBeEscapedWhenCastToString;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use App\Models\Category;
 
 class Product extends Model
 {
@@ -30,10 +28,10 @@ class Product extends Model
         });
     }
 
-    public function user(): belongsTo {
+    public function user() {
         return $this->belongsTo(User::class);
     }
-    // public function categories(): hasOne {
-    //     return $this->hasOne(Category::class);
-    // }
+    public function categories() {
+        return $this->hasOne(Category::class);
+    }
 }

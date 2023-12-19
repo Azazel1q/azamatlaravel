@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\CategoryUser;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,15 +25,17 @@ class UserController extends Controller
     }
 
     public function detail(User $user) {
-        return view('workers.detail', ['worker'=>$user]);
+        $products = Product::where('user_id', $user->id)->get();
+        $orders = Order::where('worker_id',"=", $user->id)->get();
+        // dd($products);
+        return view('workers.detail', ['worker'=>$user, 'products'=>$products, 'orders'=>$orders]);
     }
 
     public function LK() {
         $user = Auth::user();
         $products = Product::where('user_id', $user->id)->get();
         // $category = Category::where('id', $products->category_id)->get();
-        $category_user = CategoryUser::where('id', $user->category_user)->get();
-
-        return view('LK', ['lk' => $products, 'user'=> $user, 'category_user'=> $category_user]);
+        // dd($products);
+        return view('LK', ['lk' => $products, 'user'=> $user]);
     }
 }

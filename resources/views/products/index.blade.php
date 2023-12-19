@@ -6,15 +6,7 @@
             <h2 class="workers__title">Продукты</h2>
             <div class="items products">
                 @foreach ($products as $product)
-                    <x-product-item
-                    name="{{ $product->title }}"
-                    desc="{{ $product->user_id }}"
-                    price="{{ $product->price }}"
-                    thumb="{{$product->thumb}}"
-                    order=""
-                    {{-- link="/{{ route('productsDetail', ['product'=>$product->id]) }}" --}}
-                    link="products/{{$product->id}}"
-                    ></x-product-item>
+                    <x-product-item name="{{ $product->title }}" desc="{{ $product->user_id->name }}" price="{{ $product->price }}" thumb="{{$product->thumb}}" link="/{{ route('productsDetail', ['product'=>$product->id]) }}" link="products/{{$product->id}}" ></x-product-item>
                 @endforeach
             </div>
         </div>

@@ -10,6 +10,7 @@
             <li><div class="logo logo-light">WorkIng</div></li>
             <li><a class="link" href="{{ route('home')}}">Главная</a></li>
             <li><a class="link" href="{{ route('products') }}">Биржа</a></li>
+            <li><a class="link" href="{{ route('orders') }}">Объявления</a></li>
             <li><a class="link" href="{{ route('workers')}}">Исполнители</a></li>
             @guest
             <li><a class="link" href="{{ route('login')}}">Вход</a></li>

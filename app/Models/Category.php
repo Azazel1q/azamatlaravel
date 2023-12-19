@@ -4,15 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Product;
 
 class Category extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'slug',
-        'title'
+        'title',
     ];
 
     protected static function boot() {
@@ -22,7 +23,10 @@ class Category extends Model
             $category->slug = $category->slug ?? str($category->title)->slug();
         });
     }
-    public function products(): belongsToMany {
-        return $this->belongsToMany(Product::class);
+    public function products() {
+        return $this->hasMany(Product::class);
+    }
+    public function orders() {
+        return $this->hasMany(Order::class);
     }
 }
