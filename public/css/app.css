@@ -203,12 +203,12 @@ h1 {
 .main {
     background: #232323;
     color: #f9f7f7;
+    min-height: 100vh;
 }
-
 .main-full {
     background: #232323;
     color: #f9f7f7;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .auth-form-body {
@@ -473,4 +473,50 @@ h1 {
 
 .product-item img {
     width: 80%;
+}
+
+.container-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width:1024px) {
+    .layers_middle {
+        z-index: 3;
+        width: 60%;
+    }
+    .menu {
+        width: 60%;
+        right: -100%;
+    }
+}
+
+@media (max-width:768px) {
+    .layers_base {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: baseline;
+    }
+    .workers {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .layers_middle {
+        width: 100%;
+        left: 0;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .products {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

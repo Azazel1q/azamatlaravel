@@ -17,7 +17,6 @@ class Order extends Model
         'client_id',
         'categories',
         'status_id',
-        'worker_id',
         'price',
         'date',
     ];
@@ -26,11 +25,16 @@ class Order extends Model
         return $this->hasOne(Category::class);
     }
 
-    public function userId() {
-        return $this->hasOne(User::class);
-    }
-
     public function statusId() {
         return $this->hasOne(Status::class);
+    }
+    public function orderUser()
+    {
+        return $this->hasOne(OrderUser::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'client_id');
     }
 }

@@ -33,7 +33,7 @@ function openMenu() {
 }
 
 function closeMenu() {
-    menu.style.right = `-50%`;
+    menu.style.right = `-100%`;
     isClick = false;
     closeMenuAnim();
 }

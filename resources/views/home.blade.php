@@ -6,7 +6,7 @@
             <ul class="layers_base">
                 @foreach ($categories as $key => $category)
                     @if ($key < 7)
-                        <li><a class="link-dark" href="categories/{{ $category->slug }}">{{ $category->title }}</a></li>
+                        <li><a class="link-dark" href="categories/{{ $category->id }}">{{ $category->title }}</a></li>
                     @else
                         @break
                     @endif

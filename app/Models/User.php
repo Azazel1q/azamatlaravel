@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'name',
         'email',
         'password',
@@ -40,11 +41,17 @@ class User extends Authenticatable
         return $this->hasMany(Product::class);
     }
 
-    public function orders() {
-        return $this->hasMany(Order::class);
-    }
-
     public function categoryUser() {
         return $this->hasMany(CategoryUser::class);
+    }
+
+    public function orderUser()
+    {
+        return $this->hasOne(OrderUser::class);
+    }
+
+    public function order()
+    {
+        return $this->hasOneThrough(Order::class, OrderUser::class);
     }
 }

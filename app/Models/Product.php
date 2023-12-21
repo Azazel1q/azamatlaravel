@@ -34,4 +34,7 @@ class Product extends Model
     public function categories() {
         return $this->hasOne(Category::class);
     }
+    public function orderUser() {
+        return $this->hasOne(OrderUser::class);
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\CategoryUser;
 use App\Models\Order;
+use App\Models\OrderUser;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,17 +26,23 @@ class UserController extends Controller
     }
 
     public function detail(User $user) {
-        $products = Product::where('user_id', $user->id)->get();
-        $orders = Order::where('worker_id',"=", $user->id)->get();
-        // dd($products);
-        return view('workers.detail', ['worker'=>$user, 'products'=>$products, 'orders'=>$orders]);
+        $orders = Order::where('client_id', $user->id)->get();
+        // dd($orders);
+        return view('workers.detail', ['worker'=>$user, 'orders'=>$orders]);
     }
 
     public function LK() {
         $user = Auth::user();
-        $products = Product::where('user_id', $user->id)->get();
-        // $category = Category::where('id', $products->category_id)->get();
-        // dd($products);
-        return view('LK', ['lk' => $products, 'user'=> $user]);
+        $users = User::all();
+        $orders = Order::where('client_id', $user->id)->get();
+
+        if(OrderUser::where('user_id', $user->id)->where('status', '2')->get()) {
+            $myOrdersUsers = OrderUser::where('user_id', $user->id)->where('status', '2')->get();
+        } else {
+            $myOrdersUsers = null;
+        }
+
+        // dd($orders);
+        return view('LK', ['myOrderUsers' => $myOrdersUsers, 'user'=> $user,'users'=>$users, 'orders'=>$orders]);
     }
 }

@@ -7,30 +7,24 @@
                 <div class="workers-page">
                     <img class="worker__img" src="{{ $worker->thumb }}" alt="">
                     <div>
-                        <h2 class="workers-page__text name">{{ $worker->name }}</h2>
-                        <p class="workers-page__text description">{{ $worker->email }}</p>
-                        <p class="workers-page__text description">{{ $worker->description }}</p>
-                        <a class="workers-page__text button" href="">Оставить заявку</a>
+                        <h2 class="workers-page__text name">Имя: {{ $worker->name }}</h2>
+                        <p class="workers-page__text description">Почта: {{ $worker->email }}</p>
+                        <p class="workers-page__text description">О себе: {{ $worker->description }}</p>
                     </div>
                 </div>
             @endif
-        </div>
-    </section>
-    <section class="main">
-        <div class="container container-workers-detail">
-            <div class="column products">
-                @if (count($products) > 0)
-                    @foreach ($products as $product)
-                        <x-product-item name="{{ $product->title }}" desc="{{ $product->user_id->name }}" price="{{ $product->price }}" thumb="{{$product->thumb}}" link="/{{ route('productsDetail', ['product'=>$product->id]) }}" link="products/{{$product->id}}" ></x-product-item>
-                    @endforeach
-                @else
-                    <h2>Продуктов нет</h2>
-                @endif
-            </div>
-            <div class="column orders">
-                @if (count($orders) > 0)
+            <h2 style="margin-bottom: 20px">Объявления исполнителя: {{ $worker->name }}</h2>
+            <div>
+                @if ($orders)
                     @foreach ($orders as $order)
-                        <x-product-item name="{{ $order->title }}" desc="{{ $order->description }}" price="{{ $order->price }}" thumb="" link="/{{ route('productsDetail', ['product'=>$product->id]) }}" link="products/{{$product->id}}" ></x-product-item>
+                        <div class="worker-item">
+                            <div class="worker-item__text">
+                                <h3 class="name">Имя: {{ $order->title }}</h3>
+                                <p class="description">Описание: {{ $order->description }}</p>
+                                <p class="description">Стоимость: {{ $order->price }} руб.</p>
+                                <p class="description">Сроки: {{ $order->date }} дней.</p>
+                            </div>
+                        </div>
                     @endforeach
                 @else
                     <h2>Объявлений нет</h2>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LKController;
 use App\Http\Controllers\OrderConroller;
@@ -32,6 +33,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [UserController::class, 'Main'])->name('home');
 Route::get('/home', [UserController::class, 'Main'])->name('home.r');
 Route::get('/LK', [UserController::class, 'LK'])->name('LK');
+Route::post('/LK/{order}/updateStatus', [OrderConroller::class, "updateStatus"])->name('LK.updateStatus');
 
 Auth::routes();
 
@@ -45,5 +47,11 @@ Route::get('/orders', [OrderConroller::class, "index"])->name('orders');
 Route::get('/orders/{order}', [OrderConroller::class, "detail"])->name('ordersDetail');
 Route::get('/orderForm', [OrderConroller::class, "orderForm"])->name('orderForm');
 Route::post('/orderForm', [OrderConroller::class, "create"])->name('orders.create');
-Route::post('/orders/{order}/updateStatus', [OrderConroller::class, "updateStatus"])->name('orders.statusUpdate');
+Route::post('/orders/{order}/createOrderUser', [OrderConroller::class, "createOrderUser"])->name('orders.createOrderUser');
+Route::post('/orders/{id}/delete', [OrderConroller::class, "delete"])->name('orders.deleteOrder');
+
+Route::get('/categories/{id}', [CategoryController::class, "show"])->name('categories');
 // Route::post('/order/create', [OrderConroller::class, "create"])->name('ordercreate');
+Route::get('/sitemap', function() {
+   return view('sitemap');
+})->name('sitemap');
